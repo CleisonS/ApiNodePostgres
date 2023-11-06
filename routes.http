@@ -2,15 +2,15 @@ POST http://localhost:3333/videos
 Content-Type: application/json
 
 {
-    "title": "Video node",
-    "description": "first video",
-    "duration": 180    
+    "title": "Video aleatorio",
+    "description": "sem palavras para consulta",
+    "duration": 60    
 }
 
 ###
 
 
-GET  http://localhost:3333/videos?search=node
+GET  http://localhost:3333/videos?search=aleatorio
 
 ###
 
