@@ -6,7 +6,7 @@ export class DatabasePostgres {
     let videos
 
     if(search){
-        videos = await sql`select * from videos where title ilike '%' || ${search} || '%'`;
+        videos = await sql`select * from videos where title ilike ${'%' +search + '%'}`;
     }else{
         videos = await sql`select * from videos `
 

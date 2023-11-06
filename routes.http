@@ -10,7 +10,7 @@ Content-Type: application/json
 ###
 
 
-GET  http://localhost:3333/videos?search=aleatorio
+GET  http://localhost:3333/videos?search=node
 
 ###
 
