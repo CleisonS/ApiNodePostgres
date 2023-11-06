@@ -27,11 +27,11 @@ server.get('/videos', async(request) =>{
     return videos
 })
 
-server.put('/videos/:id', (request, replay) =>{
+server.put('/videos/:id', async(request, replay) =>{
     const videoId = request.params.id
     const {title, description, duration} = request.body
 
-    database.update(videoId,{
+    await database.update(videoId,{
         title,
         description,
         duration,
@@ -40,14 +40,14 @@ server.put('/videos/:id', (request, replay) =>{
     return replay.status(204).send()
 })
 
-server.delete('/videos/:id', (request, replay) =>{
+server.delete('/videos/:id', async(request, replay) =>{
     const videoId = request.params.id
 
-    database.delete(videoId)
+    await database.delete(videoId)
 
     return replay.status(204).send()
 })
 
 server.listen({
-    port: 3333
+    port: process.env.PORT ?? 3333,
 })
